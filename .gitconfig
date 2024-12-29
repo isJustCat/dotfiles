@@ -1,0 +1,5 @@
+[http]
+	postBuffer = 52428800
+[user]
+	email = poly@e926.de
+	name = polygon
