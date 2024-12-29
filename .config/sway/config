@@ -93,6 +93,8 @@ bindsym $mod+l exec $lock
 bindsym $mod+Escape exec $power
 bindsym $mod+End exec $wifi
 
+bindsym $mod+h exec systemctl hibernate
+
 bindsym print exec "sway-screenshot --clipboard-only -m region" 
 
 # Notifications
