@@ -48,7 +48,7 @@ set $ws8   8:8
 set $ws9   9:9
 set $ws0   10:10
 # Font
-font pango:Sans 12
+font "JetBrainsMono NF" 12
 
 # Window borders
 default_border pixel 1

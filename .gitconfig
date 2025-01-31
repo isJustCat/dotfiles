@@ -3,3 +3,5 @@
 [user]
 	email = poly@e926.de
 	name = polygon
+[init]
+	defaultBranch = main
