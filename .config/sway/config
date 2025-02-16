@@ -235,3 +235,4 @@ exec_always ~/.config/waybar/waybar.sh
 # sway notification center
 exec_always swaync
 bindsym $mod+Shift+n exec swaync-client -t -sw
+exec dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK XDG_CURRENT_DESKTOP

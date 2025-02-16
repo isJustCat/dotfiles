@@ -19,12 +19,7 @@
       "9": [],
       "10": []
     },
-    "format-icons": {
-      "1": "/󰭹",
-      "2": "",
-      "3": ""
-    }
-  },
+   },
   "clock": {
     "interval": 1,
     "format": "<span size='17500' background='#080808' foreground='#9fe5d8'></span><span foreground='#080808' background='#9fe5d8' size='13000'>  </span><span foreground='#080808' background='#79dac8'> {:%d.%m.%Y %H:%M:%OS} </span><span size='17500' background='#080808' foreground='#79dac8'></span>",
