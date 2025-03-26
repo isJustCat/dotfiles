@@ -56,3 +56,4 @@ export EDITOR="helix"
 set PATH $PATH /home/poly/.local/bin
 
 alias dotfiles='/usr/bin/git --git-dir="$HOME/.dotfiles/" --work-tree="$HOME"'
+alias mixxx='flatpak run org.mixxx.Mixxx'

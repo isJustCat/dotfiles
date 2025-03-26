@@ -1,79 +1,236 @@
+@define-color black         #000000;
+@define-color violet        #9900cc;
+@define-color telekom       #E2007A;
+@define-color white         #ffffff;
+@define-color pink          #F5A9B8;
+@define-color bloodred      #651C32;
+@define-color warningred    #cc0202;
+@define-color lightred      #BF565A; 
+@define-color green         #00ff55;
+@define-color beige         #F5F5DC;
+
+
 * {
-    border-radius: 0;
-    font-family: Operator Mono SSm Medium, 'JetBrainsMono NF';
-    padding-bottom: 2px;
-    padding-top: 1px;
-    font-size: 10pt;
+    font-family: sans-serif;
+    font-size: 14px;
     min-height: 0;
+    border-radius: 0;
+    padding: 0;
+    margin: 0;
 }
 
-window#waybar {
-    background: transparent;
-    color: white;
+#waybar {
+    background-color: @black;
+    color: @white;
+    border-radius: 0px;
+    
+}
+
+
+button {
+    box-shadow: none;
+    /* Remove predefined box-shadow */
+    text-shadow: none;
+    /* Remove predefined text-shadow */
+    background: none;
+    /* Remove predefined background color (white) */
+    transition: none;
+    /* Disable predefined animations */
+    border: none;
+}
+
+button:hover {
+    box-shadow: none;
+    /* Remove predefined box-shadow */
+    text-shadow: none;
+    /* Remove predefined text-shadow */
+    background: none;
+    /* Remove predefined background color (white) */
+    transition: none;
+    /* Disable predefined animations */
+    border: none;
 }
 
 tooltip {
-	background: #080808;
-	border-radius: 25px;
-	border-width: 2px;
-	border-style: solid;
-	border-color: #303030;
-	}
-
-#workspaces button {
-    padding-top: 5px;
-    padding-left: 10px;
-    padding-right: 10px;
-    margin-right: 5px;
-    margin-left: 5px;
-    padding-bottom: 1px;
-    color: #c6c6c6;
+    padding: 0;
+    margin: 0;
+    background-color: @beige;
+    color: @black;
+    border-width: 0px;
+    border-color: @violet;
+    border-radius: 8px;
 }
 
-#workspaces button.focused {
-    color: #080808;
-    background-color: #80a0ff;
-    border-radius: 15px;
+tooltip label {
+    padding: 0;
+    margin: 0;
+    background-color: inherit;
+    color: @black;
 }
 
-#workspaces button.urgent {
-    color: #080808;
-    background-color: #de935f;
-    border-radius: 15px;
+.modules-left {
+    background-color: inherit;
+    border-radius: 0;
 }
 
-#workspaces button:hover {
-	background-color: #79dac8;
-	color: #080808;
-	border-radius: 15px;
+.modules-center {
+    background-color: inherit;
+    border-radius: 0;
 }
 
-#custom-date, #clock, #battery, #pulseaudio, #network, #workspaces, #mpd  {
-	background-color: #080808;
-	padding: 10px 5px;
-	margin: 0px 0px;
-	border-style: solid;
-	border-color: #303030;
+.modules-right {
+    background-color: inherit;
+    border-radius: 0;
 }
 
-#workspaces {
-	background-color: #080808;
-	border-radius: 25px 0px 0px 25px;
-	padding-left: 10px;
-    margin-left: 15px;
+/* If workspaces is the leftmost module, omit left margin */
+.modules-left>widget:first-child>#workspaces {
+    margin-left: 0;
 }
 
-#network {
-	border-radius: 25px 0px 0px 25px;
-    padding-left: 15px;
+/* If workspaces is the rightmost module, omit right margin */
+.modules-right>widget:last-child>#workspaces {
+    margin-right: 0;
 }
 
-#battery.warning:not(.charging) {
-    color: #ff5189;
+#workspaces,
+#tags {
+    margin: 0;
 }
 
-#clock {
-	border-radius: 0px 25px 25px 0px;
-	padding-right: 15px;
-    margin-right: 15px;
+#workspaces button,
+#tags button {
+    border-radius: 4px;
+    padding: 0 6px 0 6px;
+    color: @pink;
+    background-color: transparent;
+}
+
+#workspaces button:hover,
+#tags button:hover {
+    color: @white;
+    background-color: @black;
+}
+
+#workspaces button.focused,
+#tags button.focused {
+    color: @base00;
+    background-color: @telekom;
+}
+
+#workspaces button.urgent,
+#tags button.urgent {
+    color: @white;
+    background-color: @warningred;
+}
+
+#window {
+    padding: 0 4px 0 4px;
+    color: @black;
+}
+
+#window.empty {
+    padding: 0;
+    background-color: transparent;
+}
+
+#taskbar {
+    font-style: normal;
+    font-weight: 500;
+}
+
+#taskbar button {
+    padding: 0 5px 0 5px;
+    border-radius: 6px;
+    color: @violet;
+    background-color: inherit;
+}
+
+#taskbar button:hover {
+    color: @white;
+    background-color: @violet;
+}
+
+#taskbar button.minimized {
+    color: @beige;
+    background-color: @beige;
+}
+
+#taskbar button.active {
+    color: @white;
+    background-color: @bloodred;
+}
+
+#clock,
+#language,
+#wireplumber,
+#network,
+#bluetooth,
+#battery,
+#cpu,
+#memory,
+#disk,
+#temperature,
+#backlight,
+#custom-keyboard,
+#custom-wlsunset,
+#tray {
+    margin: 0 6px 0 6px;
+    padding: 0;
+    font-weight: 500;
+}
+
+#custom-launcher {
+    padding: 0 6px 0 6px;
+    color: @pink;
+}
+
+#clock,
+#language,
+#wireplumber,
+#network,
+#cpu,
+#memory,
+#disk,
+#temperature,
+#backlight,
+#battery {
+    color: @pink;
+}
+
+#leftWrapper {
+    background-color: @black;
+    color: @violet;
+    border-radius: 6px;
+}
+
+#rightWrapper {
+    background-color: @black;
+    color: @pink;
+    padding: 0 4px 0 4px;
+    border-radius: 6px;
+}
+
+#wireplumber.muted,
+#network.disconnected,
+#temperarture.critical,
+#battery.charging,
+#battery.plugged {
+    color: @green;
+}
+
+
+
+#tray {
+    padding: 0 4px 0 4px;
+    border-radius: 6px;
+    background-color: @black;
+}
+
+#tray>.passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray>.needs-attention {
+    -gtk-icon-effect: highlight;
 }
